@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://example.com/path/to/shamel.css" rel="stylesheet">
+
+   <style>
+        body {
+            font-family: 'Shamel', sans-serif;
+        }
+
+        #hero {
+            background: linear-gradient(#0e3f5ac9, #0e3f5ac9, #4d886cc7), url('image 65.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            background-attachment: scroll;
+            min-height: 70vh !important; 
+            padding-top: 70px !important;
+            padding-bottom: 70px !important;
+        }
+
+        #logo {
+            position: absolute;
+            top: 2%;
+            left: 3%;
+            width: 15vw; 
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            #logo {
+                width: 20vw;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #logo {
+                width: 8vw;
+            }
+        }
+
+        .content-container {
+            border: 4px dashed #4D886C;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .content2-container {
+            border: 0px dashed white ;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .white-bg {
+            background-color: #fff;
+        }
+
+        .green-bg {
+            background-color: #4D886C;
+            color: #fff;
+        }
+
+        .image-container {
+            max-width: 100%;
+            height: auto;
+            border: 4px dashed #4D886C;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .image2-container {
+            max-width: 100%;
+            height: auto;
+            border: 4px dashed white;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+
+        .text-content {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .text-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .text-content p {
+            margin: 0;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+        }
+
+        .row .col-md-6 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+
+        
+/*location*/
+
+
+.location {
+        position: relative;
+        display: flex;
+        height: 80vh;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 80px;
+      }
+      .location-image {
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+        object-fit: cover;
+      }
+      .location-outline {
+        position: relative;
+        z-index: 1;
+        width: 600px;
+        height: 350px;
+        border: solid;
+        border-width: 5px;
+        border-radius: 30px;
+        border-color: white;
+      }
+      .location-widget {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 30px;
+      }
+      .location-widget iframe {
+        border-radius: 30px;
+        width: 98%;
+        height: 96%;
+        border: 0;
+      }
+      .location-content {
+        position: relative;
+        z-index: 1;
+        margin-left: 60px;
+        font-family: "Noto Sans Arabic", sans-serif;
+        text-align: center;
+        color: white;
+        flex: 1;
+      }
+      .location-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        margin-bottom: 20px;
+      }
+      .location-title {
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+      .location-container {
+        margin-top: 130px;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 50px;
+        width: 1200px;
+        flex-wrap: wrap;
+      }
+      .location-header-icon {
+        padding-bottom: 10px;
+        padding-left: 5px;
+      }
+      .location-body {
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 1200px) {
+        .location {
+          flex-direction: column;
+        }
+        .location-image {
+          object-fit: cover;
+          height: 100%;
+        }
+        .location-container {
+          justify-content: center;
+          width: 100%;
+          margin-left: 0;
+          background-color: #4d886c;
+        }
+
+        .location-outline {
+          margin-top: 20px;
+          height: 300px;
+          width: 60%;
+
+          margin-left: 0px;
+        }
+
+        .location-header {
+          font-size: 40px;
+        }
+
+        .location-title {
+          font-size: 20px;
+        }
+        .carousel-item {
+          height: 100vh;
+        }
+
+        .carousel-item img {
+          object-fit: cover;
+          height: 100%;
+        }
+
+        .location-container {
+          margin-top: 30px;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .location-content {
+          margin-left: 0px;
+        }
+
+        .location-header {
+          font-size: 24px;
+        }
+
+        .location-title {
+          font-size: 16px;
+        }
+
+        .location-body {
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .location-header {
+          font-size: 30px;
+        }
+        .location-outline {
+          height: 300px;
+          width: 80%;
+        }
+
+        .location-title {
+          font-size: 18px;
+        }}
+
+
+    </style>
+</head>
+<body>
+
+  <section id="hero" class="min-vh-100 d-flex align-items-center text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Logo -->
+                <img src="CEIES Logo@4x 1-min.png" alt="Logo" id="logo">
+                <h1 class="text-white">Robotics and Unmanned Systems</h1>
+                <h5 class="text-white mt-5 mb-5">Advanced technology using artificial intelligence to perform tasks autonomously in diverse environments, enhancing efficiency and safety in smart engineering systems.</h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="container mt-5">
+    <div class="row content-container white-bg">
+        <div class="col-md-6">
+            <img src="image 46.png" alt="Image 1" class="image-container">
+        </div>
+        <div class="col-md-6 text-content">
+            <h3>Modeling and Flight Control System Design for Autonomous UAV</h3>
+            <p>This project aims at developing an autonomous aircraft capable of performing regular operational tasks starting from takeoff, navigation through a pre-determined path and finally landing autonomously. The algorithms, software for mission control, guidance and control will be developed in this project. Also, the software and hardware for GPS/IMU and autopilot units will be developed. Moreover the Ground Control Station will be developed.</p>
+        </div>
+    </div>
+    <div class="row content2-container green-bg">
+        <div class="col-md-6 text-content">
+            <h3>Pedestrian Detection</h3>
+            <p>A Low Complexity Pedestrian Detection Framework for Smart Video Surveillance Systems
+
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img src="image 18-min.png" alt="Image 2" class="image2-container">
+        </div>
+    </div>
+</div>
+
+<!--copy-->
+
+<div class="container mt-5">
+  <div class="row content-container white-bg">
+      <div class="col-md-6">
+          <img src="image 46.png" alt="Image 1" class="image-container">
+      </div>
+      <div class="col-md-6 text-content">
+          <h3>Distributed Optimization for Cooperative Estimation and Control in Multi-agent Systems</h3>
+          <p>Distributed cooperative estimation and control, where multiple agents collectively achieve estimation and control objectives in the presence of only local information and local interaction among neighbors, is of great significance in multi-agent systems enabling numerous applications. The main objective of the proposed research is to address the inherent challenges in distributed optimization for cooperative estimation and control.</p>
+      </div>
+  </div>
+  <div class="row content2-container green-bg">
+      <div class="col-md-6 text-content">
+          <h3>Night Vision Based on Laser Gated Imaging
+        </h3>
+          <p>Laser gated imaging allows for imaging at long distances while reducing the effect of obscurants in the atmosphere. It improves the signal to backscattering noise ratio (SBR) for a camera signal and produce quality Images/915 in noisy environment. It is a powerful technique for night vision that has advantages over thermal imagers. Some of these are the ability to see through class and a better performance in rain, fog and snow.</p>
+      </div>
+      <div class="col-md-6">
+          <img src="image 18-min.png" alt="Image 2" class="image2-container">
+      </div>
+  </div>
+</div>
+
+<!--location-->
+<div class="location">
+    <div class="location-image">
+      <img src="./locationf.png" />
+    </div>
+    <div class="location-container">
+      <div class="location-content">
+        <div class="location-header">
+          Location
+          <div class="location-header-icon">
+            <svg
+              width="62"
+              height="62"
+              viewBox="0 0 62 61"
+              fill="none"
+              onclick="github.com/The-Reaperx"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <rect
+                x="0.131836"
+                width="61"
+                height="61"
+                fill="url(#pattern0_10_274)"
+              />
+              <defs>
+                <pattern
+                  id="pattern0_10_274"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_10_274"
+                    transform="scale(0.0111111)"
+                  />
+                </pattern>
+                <image
+                  id="image0_10_274"
+                  width="90"
+                  height="90"
+                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEiklEQVR4nO2cTaiVRRjHn6wMU1MIsShyk1YuNAiuBmFwSd2VFSi1CtK+RN20CNwEKbrQq9620abM1rUI1xmRUdlaWtRNCFIhUzvq5fxiuCNE3PfrnGfemed95wcHLveeO/+Z58yZ+c8zM69IJpPJZDKZTK8BHgBeBU4Ap4HzwGXgpn9d9r877d/zivuf2PU2AXA/sBf4ntE5C+xxZcVuT3IADwPHgWvocRU4BjwkfQe4G9gH/E043If3PnCP9BHgMeAc7fETsEb6BPBy4F5cxBXgRekDwGvALeIxC7wlXQZ4k3TYIx0eLmZJB1eXbdIlgEeBv0gPN088Ll0AWNiyu2jKj85minWA90ifd8UyblXmV2ip44aQB8UqfllthaNiOEGkmbsIzVWTiSifhbPGbrHGmKnOWHwnlnATCzDEHkNgpVjB73Zo8o+fWCeAxf61we+sDJS1dogVfAC0mAHWlWit9+/R4phYwe/jafXkdTX01iv27K/ECsAvSo0+3kBzWknzvFgBuKTU6IkGmhuVNC+KFYAbSo1e0kBziZLmQKwAXI8Q6PuUNK+JFRRdwESEoWNGrAD8rNToEw00P1TSPCdWAL5UavTAWbcaek8qzgtfiBWA/egxUxZsH+TfFfX2ixWASXQZeJ+80bsL93raDxdaPfk2k2IF4F5/WMUaV1zdxRLAx9jjI7EG8Cz2eEYsAnyLHc4Cd4hFjPXqSbGMSzuSPnZSo0UAqxJ3IO6o2iPSBUjrFOn/2SVdAjhFenwmXQNYBPxAOrjE12LpIsyN15obqaPi6rBKugywGvgjYpD/BNZKH2Bu19rdfI3hMJ6SPsFc9q3NI71ue22T9BFgqz+7ERqnsVWM33w96rboS86y7a4oY4viZu58uLK3VNThnZKzgm5MPxL1+oW/a13FENhZUc7mQMF2ZW6u0H695oHMKYmB396ve9B8WCPYm5Rv07ogP1ehub3BlTxX3nJpG7d0bdjw2aqTmn4Y0ThDN6gxXDQJcrzlOnBmhADcrLqLDbw05hXmWzU0tvm6NOWMeiArKrpmjIPmN4AXakxOo/J2RdnPj7GhO2z1CQnAwYKK/AYsUNKYHiEQ00raC4BfCzQOamjUrYQL6HwcUNS5y90paRBkl7BaqKj/QYGOO0Nyp5ZOlRUr+lqtVtZ6ouaC5rr2nW6fkykaHksto1YFTrY5UQBTNQJ9JJD21wV6n4bQ+6/wspKFRRDrA6yoyIm4v60IpL2zQNPFYFkIzdvCb8Qw88DnJYE+FWlRtiuGdw76VQJ2lAR6e2DtT1r11DEnB2BtSaCDPtjELeNb1S7xzsHtDrC0pLFLA2uXeeoDJr1zGcCF+T5kaYHWPHWb3rkI4PA8+oekBVobNtv2ziXPZjrse/YF/7PaSnAMT33StsVJjApPvdysd06N4B0O+CbKMjRBgnnq6ImVxAjmqWN65xQJ4qlT8M4pou6p/UZpphnNh1M32TUUyTCCQYh0CNE6F2M+RaZPjBRod6Yu04ypUXMLbr8u9+xqLvlYtZZ7yWQymUwmk8lkMhnR4l8Bzwa9oKN+7gAAAABJRU5ErkJggg=="
+                />
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="location-title">
+          Center of Excellence for Research in Intelligent Engineering Systems
+        </div>
+        <div class="location-body">
+          ceies@kau.edu.sa<br />
+          00966 12 69 51903<br />
+          4th Floor
+        </div>
+        <div class="location-socials">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            fill="currentColor"
+            class="bi bi-twitter-x clickable-svg"
+            viewBox="0 0 16 16"
+            style="margin-right: 10px"
+            onclick="goToGithub()"
+          >
+            <path
+              d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            fill="currentColor"
+            class="bi bi-instagram clickable-svg"
+            viewBox="0 0 16 16"
+            style="margin-right: 10px"
+          >
+            <path
+              d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923 3.9 3.9 0 0 0 .923-1.417c.198-.509.333-1.09.372-1.942.037-.853.048-1.125.048-3.297s-.01-2.444-.048-3.297c-.04-.851-.174-1.434-.372-1.943a3.9 3.9 0 0 0-.923-1.416 3.9 3.9 0 0 0-1.416-.923c-.509-.198-1.09-.333-1.942-.372C10.444.01 10.172 0 7.999 0ZM8 1.454c2.136 0 2.388.01 3.23.048.779.036 1.201.166 1.483.276.373.145.639.318.918.597.28.28.452.545.597.918.11.282.24.704.276 1.483.038.842.048 1.093.048 3.23s-.01 2.388-.048 3.23c-.036.779-.166 1.201-.276 1.483a2.44 2.44 0 0 1-.597.918 2.44 2.44 0 0 1-.918.597c-.282.11-.704.24-1.483.276-.842.038-1.094.048-3.23.048s-2.388-.01-3.23-.048c-.779-.036-1.201-.166-1.483-.276a2.44 2.44 0 0 1-.918-.597 2.44 2.44 0 0 1-.597-.918c-.11-.282-.24-.704-.276-1.483-.038-.842-.048-1.094-.048-3.23s.01-2.388.048-3.23c.036-.779.166-1.201.276-1.483.145-.373.318-.639.597-.918.28-.28.545-.452.918-.597.282-.11.704-.24 1.483-.276.842-.037 1.093-.048 3.23-.048Zm0 2.497a4.049 4.049 0 1 0 0 8.099 4.049 4.049 0 0 0 0-8.099Zm0 6.685a2.636 2.636 0 1 1 0-5.272 2.636 2.636 0 0 1 0 5.272Zm5.109-6.848a.947.947 0 1 1-1.894 0 .947.947 0 0 1 1.894 0Z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            fill="currentColor"
+            class="bi bi-linkedin clickable-svg"
+            viewBox="0 0 16 16"
+            onclick="goToGithub()"
+          >
+            <path
+              d="M0 1.146C0 .513.324 0 .725 0h14.55c.4 0 .725.513.725 1.146v13.708c0 .633-.324 1.146-.725 1.146H.725A.723.723 0 0 1 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.4zm-1.2-8.21c.837 0 1.358-.554 1.358-1.248-.015-.71-.52-1.248-1.341-1.248-.822 0-1.357.538-1.357 1.248 0 .694.52 1.248 1.326 1.248h.014zm4.909 8.21V9.359c0-.213.015-.426.08-.578.175-.426.574-.868 1.243-.868.876 0 1.226.654 1.226 1.613v4.868h2.4v-5.2c0-2.775-1.481-4.065-3.454-4.065-1.631 0-2.358.91-2.768 1.547h.04v-1.335H6.242c.027.862 0 7.225 0 7.225h2.4z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end location-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

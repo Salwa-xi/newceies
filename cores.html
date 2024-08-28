@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Pills Example</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Abel Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@700&family=Noto+Sans+Arabic:wght@100..900&family=Raleway:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .hero {
+        width: 100%;
+        height: 100vh;
+        min-height: 600px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .hero-image-container {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-text {
+        position: relative;
+        z-index: 1;
+        color: white;
+        font-family: "Noto Sans Arabic", sans-serif;
+        font-size: calc(3.5rem + 2vw);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 0 10px;
+      }
+
+      .hero-body {
+        margin-top: 20px;
+        text-align: center;
+        font-size: calc(1rem + 1vw);
+        width: 80%;
+        max-width: 800px;
+      }
+
+      .hero-logo-container {
+        z-index: 1;
+        position: absolute;
+        left: 2vw;
+        top: 2vw;
+      }
+      .projects-heading {
+        display: flex;
+        justify-content: right;
+        margin-top: 45px;
+        margin-right: 45px;
+      }
+
+      .project-heading-title {
+        margin-right: 20px;
+        font-family: "Noto Sans Arabic", sans-serif;
+        font-size: 40px;
+        padding-bottom: 20px;
+      }
+      .courses {
+        margin-top: 40px;
+      }
+
+      .location {
+        position: relative;
+        display: flex;
+        height: 80vh;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 80px;
+      }
+      .location-image {
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+        object-fit: cover;
+      }
+      .location-outline {
+        position: relative;
+        z-index: 1;
+        width: 600px;
+        height: 350px;
+        border: solid;
+        border-width: 5px;
+        border-radius: 30px;
+        border-color: white;
+      }
+      .location-widget {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 30px;
+      }
+      .location-widget iframe {
+        border-radius: 30px;
+        width: 98%;
+        height: 96%;
+        border: 0;
+      }
+      .location-content {
+        position: relative;
+        z-index: 1;
+        margin-left: 60px;
+        font-family: "Noto Sans Arabic", sans-serif;
+        text-align: center;
+        color: white;
+        flex: 1;
+      }
+      .location-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        margin-bottom: 20px;
+      }
+      .location-title {
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+      .location-container {
+        margin-top: 130px;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 50px;
+        width: 1200px;
+        flex-wrap: wrap;
+      }
+      .location-header-icon {
+        padding-bottom: 10px;
+        padding-left: 5px;
+      }
+      .location-body {
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 1200px) {
+        .location {
+          flex-direction: column;
+        }
+        .location-image {
+          object-fit: cover;
+          height: 100%;
+        }
+        .location-container {
+          justify-content: center;
+          width: 100%;
+          margin-left: 0;
+          background-color: #4d886c;
+        }
+
+        .location-outline {
+          margin-top: 20px;
+          height: 300px;
+          width: 60%;
+
+          margin-left: 0px;
+        }
+
+        .location-header {
+          font-size: 40px;
+        }
+
+        .location-title {
+          font-size: 20px;
+        }
+        .carousel-item {
+          height: 100vh;
+        }
+
+        .carousel-item img {
+          object-fit: cover;
+          height: 100%;
+        }
+
+        .location-container {
+          margin-top: 30px;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .location-content {
+          margin-left: 0px;
+        }
+
+        .location-header {
+          font-size: 24px;
+        }
+
+        .location-title {
+          font-size: 16px;
+        }
+
+        .location-body {
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .location-header {
+          font-size: 30px;
+        }
+        .location-outline {
+          height: 300px;
+          width: 80%;
+        }
+
+        .location-title {
+          font-size: 18px;
+        }
+        .course-container {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-logo-container {
+          left: 35%;
+        }
+        .hero-text {
+          margin-top: 100px;
+          font-size: 3rem;
+        }
+        .hero-body {
+          font-size: 2rem;
+          width: 80%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-logo-container {
+          left: 33%;
+        }
+        .hero-text {
+          font-size: 3rem;
+          margin-top: 40px;
+        }
+        .hero-body {
+          font-size: 1.3rem;
+          width: 90%;
+        }
+      }
+
+      #pills-tab .nav-link {
+        margin-left: 30px;
+        font-family: "Noto Sans Arabic", sans-serif;
+        font-size: 18px;
+        text-align: center;
+        border-radius: 15px;
+        width: 150px;
+      }
+
+      #pills-tab .nav-link.active {
+        background-color: #4d886c;
+        color: white;
+        border-color: #4d886c;
+      }
+
+      #pills-tab .nav-link:not(.active) {
+        background-color: white;
+        color: #4d886c;
+        border: 1px solid #4d886c;
+      }
+
+      #pills-tab .nav-link:hover {
+        background-color: #3c6b56;
+        color: white;
+      }
+      .course-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 0px 10px;
+        margin-bottom: 40px;
+      }
+      .course-card {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 292px;
+        width: 296px;
+        border-radius: 30px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .course-card:hover {
+        transform: scale(1.05);
+        box-shadow: rgba(100, 100, 111, 0.3) 0px 10px 40px 0px;
+      }
+
+      .course-image {
+        position: absolute;
+        top: 15px;
+      }
+
+      .course-line-1 {
+        display: flex;
+        justify-content: right;
+        margin-top: 180px;
+        margin-left: 70px;
+      }
+      .course-line-2 {
+        display: flex;
+        justify-content: right;
+        margin-left: 82px;
+      }
+      .course-line-3 {
+        display: flex;
+        justify-content: right;
+        font-size: 13px;
+        color: #4d886c;
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+
+      .course-line-graphics {
+        margin-left: 5px;
+      }
+
+      .year-heading {
+        margin: 30px 0px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      .year-heading-graphics {
+        position: absolute;
+        top: 10px;
+      }
+      .year-heading-text {
+        font-family: "Noto Sans Arabic", sans-serif;
+        font-size: 30px;
+        color: #4d886c;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="hero">
+      <div class="hero-logo-container">
+        <img
+          src="https://kau.edu.sa/Images/915/Home/CEIES Logo@4x 1 (1).png"
+          style="width: 160px; height: 170px"
+          class="hero-image"
+        />
+      </div>
+      <div class="hero-image-container">
+        <img
+          src="https://kau.edu.sa/Images/915/Home/courses-min.png"
+          class="hero-image"
+        />
+      </div>
+      <div class="hero-text">
+        <div id="hero-title" class="hero-title">البرامج و الدورات</div>
+        <div id="hero-body" class="hero-body">
+          بناء المهارات وتطوير القدرات عبر تعليم متميز وتدريب متقدم في الهندسة
+          الذكية
+        </div>
+      </div>
+    </div>
+    <div class="projects-heading">
+      <div class="projects-heading-graphics">
+        <svg
+          width="13"
+          height="70"
+          viewBox="0 0 13 70"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            width="69.2067"
+            height="12.0314"
+            transform="matrix(0.000987018 -1 -1 -0.000987018 12.3984 69.2185)"
+            fill="#4D886C"
+          />
+        </svg>
+      </div>
+      <div class="project-heading-title">الدورات</div>
+    </div>
+    <div class="container mt-5">
+      <ul
+        class="nav nav-pills mb-3"
+        id="pills-tab"
+        role="tablist"
+        style="display: flex; justify-content: center"
+      >
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="pills-2024-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-2024"
+            type="button"
+            role="tab"
+            aria-controls="pills-2024"
+            aria-selected="true"
+          >
+            2024
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="pills-2023-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-2023"
+            type="button"
+            role="tab"
+            aria-controls="pills-2023"
+            aria-selected="false"
+          >
+            الدورات السابقة
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="pills-2024"
+          role="tabpanel"
+          aria-labelledby="pills-2024-tab"
+        >
+          <div class="course-container">
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="pills-2023"
+          role="tabpanel"
+          aria-labelledby="pills-2023-tab"
+        >
+          <div class="year-heading">
+            <div class="year-heading-graphics">
+              <svg
+                width="673"
+                height="3"
+                viewBox="0 0 673 3"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="211"
+                  height="2.99998"
+                  transform="matrix(-1 8.74228e-08 8.74228e-08 1 211 0)"
+                  fill="#4D886C"
+                />
+                <rect
+                  width="211"
+                  height="2.99998"
+                  transform="matrix(-1 8.74228e-08 8.74228e-08 1 673 0)"
+                  fill="#4D886C"
+                />
+              </svg>
+            </div>
+            <div class="year-heading-text">سنة 2023</div>
+          </div>
+          <div class="course-container">
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="projects-heading">
+      <div class="projects-heading-graphics">
+        <svg
+          width="13"
+          height="70"
+          viewBox="0 0 13 70"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            width="69.2067"
+            height="12.0314"
+            transform="matrix(0.000987018 -1 -1 -0.000987018 12.3984 69.2185)"
+            fill="#4D886C"
+          />
+        </svg>
+      </div>
+      <div class="project-heading-title">البرامج التدريبية</div>
+    </div>
+    <div class="container mt-5">
+      <ul
+        class="nav nav-pills mb-3"
+        id="pills-tab"
+        role="tablist"
+        style="display: flex; justify-content: center"
+      >
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="pills-2024-taba"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-2024a"
+            type="button"
+            role="tab"
+            aria-controls="pills-2024"
+            aria-selected="true"
+          >
+            2024
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="pills-2023-taba"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-2023a"
+            type="button"
+            role="tab"
+            aria-controls="pills-2023"
+            aria-selected="false"
+          >
+            الدورات السابقة
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="pills-2024a"
+          role="tabpanel"
+          aria-labelledby="pills-2024-tab"
+        >
+          <div class="course-container">
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+                <div class="course-line-text">11/12/2024</div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="pills-2023a"
+          role="tabpanel"
+          aria-labelledby="pills-2023-tab"
+        >
+          <div class="year-heading">
+            <div class="year-heading-graphics">
+              <svg
+                width="673"
+                height="3"
+                viewBox="0 0 673 3"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="211"
+                  height="2.99998"
+                  transform="matrix(-1 8.74228e-08 8.74228e-08 1 211 0)"
+                  fill="#4D886C"
+                />
+                <rect
+                  width="211"
+                  height="2.99998"
+                  transform="matrix(-1 8.74228e-08 8.74228e-08 1 673 0)"
+                  fill="#4D886C"
+                />
+              </svg>
+            </div>
+            <div class="year-heading-text">سنة 2023</div>
+          </div>
+          <div class="course-container">
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://kau.edu.sa/Images/915/Home/course-image.png"
+                />
+              </div>
+              <div class="course-line-1">
+                <div class="course-line-text">أساسيات الهندسة المدنية</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/lecturers.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-2">
+                <div class="course-line-text">د. محمد جمال عبدالعال</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Classroom.png"
+                    style="width: 22px; height: 22px"
+                  />
+                </div>
+              </div>
+              <div class="course-line-3">
+                <div class="course-line-text">11/12/2024</div>
+                <div class="course-line-graphics">
+                  <img
+                    src="https://kau.edu.sa/Images/915/Home/Future.png"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="location">
+      <div class="location-image">
+        <img src="https://kau.edu.sa/Images/915/Home/locationf.png" />
+      </div>
+      <div class="location-container">
+        <div class="location-content">
+          <div class="location-header">
+            الموقع
+            <div class="location-header-icon">
+              <svg
+                width="62"
+                height="62"
+                viewBox="0 0 62 61"
+                fill="none"
+                onclick="github.com/The-Reaperx"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <rect
+                  x="0.131836"
+                  width="61"
+                  height="61"
+                  fill="url(#pattern0_10_274)"
+                />
+                <defs>
+                  <pattern
+                    id="pattern0_10_274"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use
+                      xlink:href="#image0_10_274"
+                      transform="scale(0.0111111)"
+                    />
+                  </pattern>
+                  <image
+                    id="image0_10_274"
+                    width="90"
+                    height="90"
+                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEiklEQVR4nO2cTaiVRRjHn6wMU1MIsShyk1YuNAiuBmFwSd2VFSi1CtK+RN20CNwEKbrQq9620abM1rUI1xmRUdlaWtRNCFIhUzvq5fxiuCNE3PfrnGfemed95wcHLveeO/+Z58yZ+c8zM69IJpPJZDKZTK8BHgBeBU4Ap4HzwGXgpn9d9r877d/zivuf2PU2AXA/sBf4ntE5C+xxZcVuT3IADwPHgWvocRU4BjwkfQe4G9gH/E043If3PnCP9BHgMeAc7fETsEb6BPBy4F5cxBXgRekDwGvALeIxC7wlXQZ4k3TYIx0eLmZJB1eXbdIlgEeBv0gPN088Ll0AWNiyu2jKj85minWA90ifd8UyblXmV2ip44aQB8UqfllthaNiOEGkmbsIzVWTiSifhbPGbrHGmKnOWHwnlnATCzDEHkNgpVjB73Zo8o+fWCeAxf61we+sDJS1dogVfAC0mAHWlWit9+/R4phYwe/jafXkdTX01iv27K/ECsAvSo0+3kBzWknzvFgBuKTU6IkGmhuVNC+KFYAbSo1e0kBziZLmQKwAXI8Q6PuUNK+JFRRdwESEoWNGrAD8rNToEw00P1TSPCdWAL5UavTAWbcaek8qzgtfiBWA/egxUxZsH+TfFfX2ixWASXQZeJ+80bsL93raDxdaPfk2k2IF4F5/WMUaV1zdxRLAx9jjI7EG8Cz2eEYsAnyLHc4Cd4hFjPXqSbGMSzuSPnZSo0UAqxJ3IO6o2iPSBUjrFOn/2SVdAjhFenwmXQNYBPxAOrjE12LpIsyN15obqaPi6rBKugywGvgjYpD/BNZKH2Bu19rdfI3hMJ6SPsFc9q3NI71ue22T9BFgqz+7ERqnsVWM33w96rboS86y7a4oY4viZu58uLK3VNThnZKzgm5MPxL1+oW/a13FENhZUc7mQMF2ZW6u0H695oHMKYmB396ve9B8WCPYm5Rv07ogP1ehub3BlTxX3nJpG7d0bdjw2aqTmn4Y0ThDN6gxXDQJcrzlOnBmhADcrLqLDbw05hXmWzU0tvm6NOWMeiArKrpmjIPmN4AXakxOo/J2RdnPj7GhO2z1CQnAwYKK/AYsUNKYHiEQ00raC4BfCzQOamjUrYQL6HwcUNS5y90paRBkl7BaqKj/QYGOO0Nyp5ZOlRUr+lqtVtZ6ouaC5rr2nW6fkykaHksto1YFTrY5UQBTNQJ9JJD21wV6n4bQ+6/wspKFRRDrA6yoyIm4v60IpL2zQNPFYFkIzdvCb8Qw88DnJYE+FWlRtiuGdw76VQJ2lAR6e2DtT1r11DEnB2BtSaCDPtjELeNb1S7xzsHtDrC0pLFLA2uXeeoDJr1zGcCF+T5kaYHWPHWb3rkI4PA8+oekBVobNtv2ziXPZjrse/YF/7PaSnAMT33StsVJjApPvdysd06N4B0O+CbKMjRBgnnq6ImVxAjmqWN65xQJ4qlT8M4pou6p/UZpphnNh1M32TUUyTCCQYh0CNE6F2M+RaZPjBRod6Yu04ypUXMLbr8u9+xqLvlYtZZ7yWQymUwmk8lkMhnR4l8Bzwa9oKN+7gAAAABJRU5ErkJggg=="
+                  />
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <div class="location-title">
+            مركز التميز البحثي في الأنظمة الهندسية الذكية
+          </div>
+          <div class="location-body">
+            ceies@kau.edu.sa<br />
+            00966 12 69 51903<br />
+            4th Floor
+          </div>
+          <div class="location-socials">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              fill="currentColor"
+              class="bi bi-twitter-x clickable-svg"
+              viewBox="0 0 16 16"
+              style="margin-right: 10px"
+              onclick="goToGithub()"
+            >
+              <path
+                d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              fill="currentColor"
+              class="bi bi-instagram clickable-svg"
+              viewBox="0 0 16 16"
+              style="margin-right: 10px"
+            >
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              fill="currentColor"
+              class="bi bi-linkedin clickable-svg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="location-outline">
+          <div class="location-widget">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d390.2072998891356!2d39.24603431474192!3d21.496029641412242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3cdd0238ec84f%3A0xd7f75c9cf5487b06!2sFaculty%20of%20Earth%20Sciences!5e0!3m2!1sen!2ssa!4v1698220205683!5m2!1sen!2ssa"
+              marginwidth="0"
+              marginheight="0"
+              scrolling="no"
+              width="96%"
+              height="96%"
+              frameborder="0"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
